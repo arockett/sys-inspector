@@ -3,10 +3,9 @@
 
 Included information:
     operating system
-    git hash of project if applicable
+    git hash of project (if applicable)
     python version
     installed python modules
-    total time target program ran
 '''
 
 import os, sys

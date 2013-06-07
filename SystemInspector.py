@@ -17,7 +17,6 @@ class SystemInspector:
     def __init__(self,extra_attributes=[]):
         self.attr_names = ['PLATFORM','PYTHON_VERSION','INSTALLED_PYTHON_MODULES']
         self.attributes = {}
-        self.extra_attributes = dict(zip(extra_attr_names, extra_attr_values))
         self.add_attribute('PLATFORM', sys.platform)
         self.add_attribute('PYTHON_VERSION', sys.version)
         self.add_attribute('INSTALLED_PYTHON_MODULES', sys.modules.keys())

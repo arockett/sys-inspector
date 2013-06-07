@@ -14,7 +14,7 @@ import subprocess
 
 class SystemInspector:
     
-    def __init__(self,extra_attr_names=[],extra_attr_values=[]):
+    def __init__(self,extra_attributes=[]):
         self.attr_names = ['PLATFORM','PYTHON_VERSION','INSTALLED_PYTHON_MODULES']
         self.attributes = {}
         self.extra_attributes = dict(zip(extra_attr_names, extra_attr_values))
@@ -31,12 +31,15 @@ class SystemInspector:
         if os.path.isdir('.hg'):
             self.attr_names.append('MERCURIAL')
             self.add_attribute('MERCURIAL', True)
-        for attr in extra_attr_names:
-            self.attr_names.append(attr)
-            self.add_attribute(attr,self.extra_attributes[attr])
+        for attr in extra_attributes:
+            self.attr_names.append(attr[0])
+            self.add_attribute(attr[0],self.attr[1])
         
     def add_attribute(self,key,value):
         self.attributes[key] = value
+        
+    def get_attribute(self,key):
+        return self.attributes[key]
             
     def write_to_file(self,filename='system_info.txt'):
         fout = open(filename, 'w')

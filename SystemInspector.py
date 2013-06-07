@@ -31,7 +31,7 @@ class SystemInspector:
             self.add_attribute('MERCURIAL', True)
         for attr in extra_attributes:
             self.attr_names.append(attr[0])
-            self.add_attribute(attr[0],self.attr[1])
+            self.add_attribute(attr[0],attr[1])
         
     def add_attribute(self,key,value):
         self.attributes[key] = value

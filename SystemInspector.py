@@ -36,6 +36,11 @@ class SystemInspector:
     def add_attribute(self,key,value):
         self.attributes[key] = value
         
+    def append_attributes(self,extra_attributes):
+        for attr in extra_attributes:
+            self.attr_names.append(attr[0])
+            self.add_attribute(attr[0],attr[1])
+        
     def get_attribute(self,key):
         return self.attributes[key]
             

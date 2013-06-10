@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+#
+# Created by Aaron Beckett June 6, 2013
+# Editted by:
+#   Aaron Beckett
+#
+#
 '''Program for getting system information.
 
 Included information:

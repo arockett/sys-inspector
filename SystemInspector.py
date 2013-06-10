@@ -41,7 +41,13 @@ class SystemInspector:
         # Add user provided attributes
         for attr in extra_attributes:
             self.add_attribute(attr[0],attr[1])
-        
+       
+    def __str__(self):
+        st = ''
+        for attr in self.attr_names:
+            st = st + attr + ': ' + str(self.attributes[attr]) + '\n'
+        return st
+ 
     def add_attribute(self,key,value):
         self.attr_names.append(key)
         self.attributes[key] = value
@@ -55,12 +61,16 @@ class SystemInspector:
             
     def write_to_file(self,filename='system_info.txt'):
         fout = open(filename, 'w')
-        for attr in self.attr_names:
-            st = attr + ': ' + str(self.attributes[attr]) + '\n'
-            fout.write(st)
+        fout.write(self.__str__())
         fout.close()
         
+def main(argc,argv):
+    si = SystemInspector()
+    si.write_to_file()
+    print si
+
+if __name__ == '__main__':
+    argc = len(sys.argv)
+    sys.exit(main(argc,sys.argv)) 
     
-    
-    
-    
+# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4 

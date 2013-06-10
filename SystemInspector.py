@@ -25,19 +25,15 @@ class SystemInspector:
         
         # Version controll IDs
         if os.path.isdir('.git'):
-            self.attr_names.append('GIT_HASH')
             git_hash = subprocess.check_output(['git', 'log', '--pretty=format:"%H"', '-n', '1'])
             self.add_attribute('GIT_HASH', git_hash.strip('"'))
         if os.path.isdir('.svn'):
-            self.attr_names.append('SUBVERSION')
             self.add_attribute('SUBVERSION', True)
         if os.path.isdir('.hg'):
-            self.attr_names.append('MERCURIAL')
             self.add_attribute('MERCURIAL', True)
             
         # Add user provided attributes
         for attr in extra_attributes:
-            self.attr_names.append(attr[0])
             self.add_attribute(attr[0],attr[1])
         
     def add_attribute(self,key,value):
@@ -46,7 +42,6 @@ class SystemInspector:
         
     def append_attributes(self,extra_attributes):
         for attr in extra_attributes:
-            self.attr_names.append(attr[0])
             self.add_attribute(attr[0],attr[1])
         
     def get_attribute(self,key):

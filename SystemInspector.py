@@ -5,13 +5,14 @@
 #   Aaron Beckett
 #
 #
-'''Program for getting system information.
+'''Module for easily storing current system information during program execution.
 
 Included information:
     operating system
-    git hash of project (if applicable)
     python version
     installed python modules
+    command line arguments used
+    git hash of project (if applicable)
 '''
 
 import os, sys

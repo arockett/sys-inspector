@@ -1,0 +1,17 @@
+TO-DO LIST
+======================
+
+attributes to add:
+- more hardware information
+  * processor
+  * main memory/RAM
+  * in/out devices
+  * secondary memory
+- version numbers of python modules
+
+features to implement:
+- compareEnv(input_file.txt)
+  * goes through the attributes of the current sys-inspector and compares to the attributes stored in input_file.txt
+    from a previous experiment and displays/saves the differences
+- add parameter management such as the one Dirk wrote in C++ called cpp_params
+- add key logger that records all user interaction during program w/o effecting the workflow

@@ -61,7 +61,7 @@ class SystemInspector:
             detective = MacDetective()
         else:
             detective = None
-
+        detective = None
         if detective:
             self.sysinfo = detective.inspect()
 

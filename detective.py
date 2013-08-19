@@ -18,6 +18,10 @@ class Detective:
 	self.verbose = verbose
         raise NotImplementedError
 
+    def inspect(self):
+	'''Gather all system information.'''
+        raise NotImplementedError
+
     def get_processor(self):
 	'''Override this method to pick out and return the processor type 
 	from the "master list" of system information.'''
